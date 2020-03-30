@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 30px;
+}
+
+
+
+
+/* --------------Animation 1 ------------- */
+.fancy{
+    color: whitesmoke;
+    text-align: center;
+    line-height: 1.3;
+}
+
+span{
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(50px);
+    display: inline-block;
+}
+
+span.fade{
+    opacity: 1;
+    transform: translateY(0px);
+    color:#28C7FA;
+}
+
+
+
+
+/* --------------Animation 2 ------------- */
+
+.reveal-text{
+    color: transparent;
+    background-image: url(BlueBack.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@supports (-webkit-background-clip: text) or (background-clip: text){
+
+    .reveal-text{
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: url(BlueBack.jpg);
+        background-repeat: repeat-x;
+        animation: reveal-background 2.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+}
+@keyframes reveal-background{
+    0% {
+        background-size: 0px;
+        background-position-y: 0%;
+    }
+    10%{
+        background-size: 30px;
+        background-position: 0%;
+    }
+    35%, 45%{
+        background-position-y: 100%;
+    }
+    70%{
+        background-size: 30px;
+        background-position-y: 0%;
+    }
+    95%{
+        background-size: 200px;
+    }
+    100%{
+        background-size: cover;
+    }
+}
+
+
+
+
+/* --------------Animation 3 ------------- */
+
+.typewriter{
+    color: #00E8D6;
+}
+
+.typewriter::after{
+    content: '|';
+    color: aliceblue;
+    margin-left: 2px;
+    opacity: 1;
+    animation: typewriter 1s infinite;
+}
+
+@keyframes typewriter{
+    0%, 100%{
+    opacity: 1;
+    }
+    50%{
+    opacity: 0;
+    }
+}

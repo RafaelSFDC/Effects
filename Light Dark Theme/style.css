@@ -1,0 +1,103 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    --accent-color: orangered;
+    --background-color: white;
+    --text-color: black;
+    --button-text-color: var(--background-color);
+    --transition-delay: 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: var(--transition-delay);
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark{
+    --accent-color: #D0D066;
+    --background-color: #333;
+    --text-color: white;
+}
+
+.tittle{
+    margin-bottom: .5rem;
+}
+
+.theme-toggle-buton{
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: .5em 1em;
+    border-radius: .3em;
+    border: none;
+    outline: none;
+    transition: var(--transition-delay);
+    transform: scale(1);
+    font-weight: 600;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.39);
+}
+
+.theme-toggle-buton .icon{
+    margin-right: .5em;
+    fill: var(--background-color);
+    transition: fill var(--transition-delay);
+}
+
+.theme-toggle-buton:hover,
+.theme-toggle-buton:focus{
+    transform: scale(1.1);
+}
+
+.sun-moon-container{
+    --rotation: 0;
+    position: absolute;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 200vmin;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    transition: transform var(--transition-delay);
+}
+.sun,
+.moon{
+    position: absolute;
+    transition: opacity var(--transition-delay);
+    width: 30px;
+    height: 30px;
+    fill: var(--accent-color);
+}
+
+.moon{
+    bottom: 5%;
+    opacity: 0;
+    transform: rotate(180deg);
+}
+.dark .moon{
+    opacity: 1;
+}
+
+.sun{
+    top: 5%;
+    opacity: 1;
+}
+
+.dark .sun{
+    opacity: 0;
+}

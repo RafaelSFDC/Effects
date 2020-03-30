@@ -1,0 +1,28 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: #071a52;
+    color: #a7ff83;
+    border: #071a52 solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px 1px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.418);
+    font-weight: 500;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 2rem;
+}
